@@ -1,8 +1,19 @@
 h1 {
   color: green;
 }
-body{
-  /* background-color:black; */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 .navbar {
    background-color: black !important; 
@@ -10,11 +21,26 @@ body{
 .navbar-brand {
   float: left;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: #fff !important;
+  text-transform: uppercase; 
   letter-spacing: -1px;
   font-weight: bold;
 }
 .nav-link {
   color: white !important;
+}
+
+
+.jumbotron-custom {
+  background-image: url('https://picsum.photos/800/400');
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white; /* 如果背景是深色的，文字颜色建议改为白色 */
+  padding: 5rem;
+}
+
+
+#sticky-footer{
+  flex-shrink: none;
 }
