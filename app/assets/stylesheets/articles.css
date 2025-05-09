@@ -1,5 +1,11 @@
-h1 {
-  color: green;
+.custom-card-container {
+  margin: 0 20%; /* 左右边距为页面宽度的 20% */
+}
+.btn-fixed-width {
+  width: 120px;
+}
+.custom-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 自定义阴影 */
 }
 html, body {
   height: 100%;

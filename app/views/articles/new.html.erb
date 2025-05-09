@@ -1,11 +1,12 @@
-<% content_for :title, "New article" %>
 
-<h1>New article</h1>
+
+<h1 class="text-center mt-4">New article</h1>
 
 <%= render "form", article: @article %>
 
-<br>
 
-<div>
-  <%= link_to "Back to articles", articles_path %>
+
+<div class="text-center mt-4  btn-primary" >
+  <%= link_to "Articles", articles_path, class: "btn btn-success mx-1 btn-fixed-width" %>
+
 </div>
