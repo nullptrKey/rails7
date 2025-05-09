@@ -11,7 +11,7 @@
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb
-/.idea/*
+/.idea/
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
