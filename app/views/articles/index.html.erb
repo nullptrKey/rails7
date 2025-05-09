@@ -17,10 +17,10 @@
     <%= link_to "Delete", article_path(article), class: "btn btn-secondary  mx-1",  data: {"turbo-method": :delete,turbo_confirm: 'Are you sure?'}  %>
     
   </div>
-  <div class="card-footer text-body-secondary">
-  <%= display_time(article.created_at, article.updated_at) %>
-
-  </div>
+    <div class="card-footer text-body-secondary small d-flex justify-content-between">
+      <span>Created: <%= article.created_at.in_time_zone("Beijing").strftime("%Y年%m月%d日 %H:%M") %></span>
+      <span>Updated: <%= article.updated_at.in_time_zone("Beijing").strftime("%Y年%m月%d日 %H:%M") %></span>
+    </div>
 </div>
 
 <% end %>

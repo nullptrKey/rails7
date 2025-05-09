@@ -1,12 +1,13 @@
-<% content_for :title, "Editing article" %>
+<% content_for :title, "Editing: #{@article.title.presence || 'Untitled Article'}" %>
+<h1 class="text-center mt-4">Editing: <%= @article.title.presence || "Untitled Article" %></h1>
 
-<h1 class="text-center mt-4">Editing article</h1>
+
 
 <%= render "form", article: @article %>
 
-<br>
 
-<div class="text-center mt-4">
-  <%= link_to "Show this article", @article %> |
-  <%= link_to "Back to articles", articles_path %>
+
+<div class="d-flex justify-content-center gap-3 mt-4">
+  <%= link_to "Show this article", @article, class: "btn btn-primary w-sm-100" %>
+  <%= link_to "Back to articles", articles_path, class: "btn btn-secondary w-sm-100" %>
 </div>

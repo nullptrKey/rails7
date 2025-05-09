@@ -1,11 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @article %>
+<% content_for :title, @article.title %>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header text-center">
+      <h2><%= @article.title %></h2>
+    </div>
+    <div class="card-body">
+      <%= simple_format(@article.text) %>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <small class="text-muted">
+        <%= time_ago_in_words(@article.created_at) %> ago
+      </small>
+      <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary btn-sm" %>
+    </div>
+  </div>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
-  <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div class="text-center mt-4">
+    <%= link_to "← Back to articles", articles_path, class: "btn btn-outline-secondary" %>
+  </div>
 </div>
