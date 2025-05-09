@@ -1,0 +1,16 @@
+<figure class="attachment attachment--<%= blob.representable? ? "preview" : "file" %> attachment--<%= blob.filename.extension %>">
+  <% if blob.representable? %>
+    <div class="attachment__content" style="max-width: 100%; overflow: hidden;">
+      <%= image_tag blob.representation(resize_to_limit: [nil, nil]), class: "img-fluid" %>
+    </div>
+  <% end %>
+
+  <figcaption class="attachment__caption" style="display: none !important;">
+    <% if caption = blob.try(:caption) %>
+      <%= caption %>
+    <% else %>
+      <span class="attachment__name"><%= blob.filename %></span>
+      <span class="attachment__size"><%= number_to_human_size blob.byte_size %></span>
+    <% end %>
+  </figcaption>
+</figure>

@@ -20,32 +20,29 @@ class ArticlesController < ApplicationController
   end
 
   # POST /articles or /articles.json
-  def create
-    @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        
-      end
+def create
+  @article = Article.new(article_params)
+  respond_to do |format|
+    if @article.save
+      format.html { redirect_to @article, notice: "Article was successfully created." }
+    else
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
+end
+
 
   # PATCH/PUT /articles/1 or /articles/1.json
-  def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
-        
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        
-      end
+def update
+  respond_to do |format|
+    if @article.update(article_params)
+      format.html { redirect_to @article, notice: "Article was successfully updated." }
+    else
+      format.html { render :edit, status: :unprocessable_entity }
     end
   end
+end
+
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
@@ -64,7 +61,8 @@ class ArticlesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :text)
-    end
+  def article_params
+    params.require(:article).permit(:title, :text) # 把 :article_text 改为 :text
+  end
+
 end

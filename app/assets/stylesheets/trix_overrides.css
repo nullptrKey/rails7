@@ -1,0 +1,16 @@
+.trix-content {
+  img,
+  action-text-attachment .attachment--preview img,
+  .attachment--preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figure.attachment--preview,
+  .attachment-gallery {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

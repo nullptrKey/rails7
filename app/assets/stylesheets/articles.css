@@ -51,3 +51,29 @@ main {
 #sticky-footer{
   flex-shrink: none;
 }
+/* 控制文章内容中所有图片大小 */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 4px;
+}
+
+.article-content figure.attachment--preview,
+.article-content .attachment--preview {
+  max-width: 100%;
+  width: 100%;
+  margin: 1rem 0;
+}
+/* 隐藏 Trix 图片附件下方的文件名和大小 */
+.attachment__name,
+.attachment__size {
+  display: none !important;
+}
+
+/* 或者更精确一点，只对 article-content 下的内容生效 */
+.article-content .attachment__name,
+.article-content .attachment__size {
+  display: none !important;
+}
