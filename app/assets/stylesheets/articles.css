@@ -1,3 +1,7 @@
+.custom-form-bg {
+  background-color: #0dcaf0; /* 柔和的淡蓝色 */
+}
+
 .custom-card-container {
   margin: 0 20%; /* 左右边距为页面宽度的 20% */
 }

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :articles
   get "home/index"
-  get "articles/index"
+  # get "articles/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   root "home#index"
   resources :articles
+  get 'register', to: 'users#new'
+  resources :users, except: [:new]
   # Defines the root path route ("/")
   # root "posts#index"
 end
