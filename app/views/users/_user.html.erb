@@ -1,0 +1,23 @@
+
+
+<% @users.each do |user| %>
+  <div class="card text-center custom-shadow custom-card-container mb-5 mt-4 ">
+    <div class="card-header">
+      by <%= user.username %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Username: <%= user.username %></h5>
+      <h5 class="card-title">Email: <%= user.email %></h5>
+      <h5 class="card-title">User ID: <%= user.id %></h5>
+      <%= link_to "Show", user_path(user), class: "btn btn-success  mx-1" %>
+      <%= link_to "Edit", edit_user_path(user), class: "btn btn-primary  mx-1" %>
+      <%= link_to "Delete", user_path(user), class: "btn btn-secondary  mx-1",  data: {"turbo-method": :delete,turbo_confirm: 'Are you sure?'}  %>
+
+    </div>
+    <div class="card-footer text-body-secondary small d-flex justify-content-between">
+      <span>Created: <%= user.created_at.in_time_zone("Beijing").strftime("%Y年%m月%d日 %H:%M") %></span>
+      <span>Updated: <%= user.updated_at.in_time_zone("Beijing").strftime("%Y年%m月%d日 %H:%M") %></span>
+    </div>
+  </div>
+
+<% end %>
