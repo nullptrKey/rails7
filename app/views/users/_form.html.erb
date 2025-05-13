@@ -30,6 +30,12 @@
           </div>
 
           <div class="d-grid gap-2 mt-4">
+            <%#
+              生成一个提交按钮，根据用户是否为新记录显示不同的文本。
+              如果用户是新记录（即 `@user.new_record?` 为 true），按钮文本为 "Sign up"；
+              否则，按钮文本为 "Update account"。
+              按钮的样式类为 "btn btn-outline-light btn-lg"，用于定义按钮的外观。
+            %>
             <%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-light btn-lg") %>
           </div>
         <% end %>
