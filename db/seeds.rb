@@ -9,21 +9,21 @@
 #   end
 require "faker"
 
-# puts "Seeding users..."
-# 10.times do
-#   # password = Faker::Internet.password(min_length: 8) # 生成随机密码
-#   password = "12345678"
-#   user = User.create(
-#     username: Faker::Internet.username,
-#     email: Faker::Internet.email,
-#     password: password
-#   )
-#   if user.errors.any?
-#     puts "Failed to create user: #{user.errors.full_messages.join(', ')}"
-#   else
-#     puts "Created user: #{user.username} (#{user.email})"
-#   end
-# end
+puts "Seeding users..."
+10.times do
+  # password = Faker::Internet.password(min_length: 8) # 生成随机密码
+  password = "12345678"
+  user = User.create(
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: password
+  )
+  if user.errors.any?
+    puts "Failed to create user: #{user.errors.full_messages.join(', ')}"
+  else
+    puts "Created user: #{user.username} (#{user.email})"
+  end
+end
 
 # 获取所有用户的 ID
 # user_ids = User.pluck(:id)

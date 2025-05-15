@@ -1,8 +1,13 @@
 
 <div class="container mt-5">
   <div class="row justify-content-center">
-
+    <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+    </div>
     <h1 class="text-center mt4">Show <%= @user.username %> your profile</h1>
     <%= render 'articles/article' %>
+    <div class="flickr_pagination mb-4">
+      <%= will_paginate @articles, :container => false %>
+    </div>
   </div>
 </div>
