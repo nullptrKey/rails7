@@ -13,7 +13,12 @@
       <small class="text-muted">
         <%= time_ago_in_words(@article.created_at) %> ago
       </small>
-      <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary btn-sm" %>
+      <% if current_user && current_user == @article.user %>
+        <p>
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-primary btn-sm" %>
+        </p>
+      <% end %>
+
     </div>
 
   </div>

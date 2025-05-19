@@ -3,10 +3,10 @@
 <div class="container">
   <!-- 显示错误消息 -->
   <% if flash.now[:alert] %>
-    <div class="alert alert-danger text-center">
-      <%= flash.now[:alert] %>
-    </div>
+
+    <%= flash.now[:alert] %>
   <% end %>
+</div>
 
   <div class="row justify-content-center">
     <div class="col-10">

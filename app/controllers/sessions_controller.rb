@@ -12,10 +12,9 @@ class SessionsController <  ApplicationController
       flash[:notice] = "You have successfully logged in"
       redirect_to user_path(user)
     else
-
+      Rails.logger.info("Setting flash alert")
       flash.now[:alert] = "There was something wrong with your login information"
       render 'new'
-
     end
   end
 
