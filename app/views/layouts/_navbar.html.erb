@@ -37,11 +37,9 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownArticles">
             <li><%= link_to "All Articles", articles_path, class: "dropdown-item" %></li>
+            <% if logged_in? %>
             <li><%= link_to "New Article", new_article_path, class: "dropdown-item" %></li>
-            <% if defined?(dashboard_articles_path) %>
-              <li><hr class="dropdown-divider"></li>
-              <li><%= link_to "Manage Articles", dashboard_articles_path, class: "dropdown-item" %></li>
-            <% end %>
+            <%  end %>
           </ul>
         </li>
 
