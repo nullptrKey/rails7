@@ -16,7 +16,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "count", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "articles", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
 
   </head>
 
