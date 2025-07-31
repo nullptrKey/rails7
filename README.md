@@ -13,4 +13,5 @@ error
 
 rails assets:precompile
 
-
+yarn add @hotwired/turbo-rails
+bin/rails stimulus:install

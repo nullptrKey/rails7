@@ -7,4 +7,8 @@ class User < ApplicationRecord
                     length: {maximum: 105},
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
   has_secure_password
+
+  def admin?
+    admin == true
+  end
 end
